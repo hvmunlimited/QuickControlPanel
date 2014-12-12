@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="detector_color">#00000000</color>
+    <color name="detector_debug_color">#FFFF0000</color>
+    <color name="drag_handler_default_color">#33B5E5</color>
+    
+    <color name="black_gradient_start">#FF000000</color>
+    <color name="black_gradient_end">#FF303030</color>
+    
+    <color name="pressed_rect_color">#9033B5E5</color>
+</resources>

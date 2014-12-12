@@ -1,0 +1,15 @@
+<resources>
+
+    <style name="PreferencesTheme" parent="@android:style/Theme.Holo">
+       <item name="android:actionBarStyle">@style/PreferenceActionBar</item>
+    </style>
+
+    <style name="PreferenceActionBar" parent="@android:style/Widget.Holo.ActionBar">
+    </style>
+    
+    <style name="AssistantTheme" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+</resources>

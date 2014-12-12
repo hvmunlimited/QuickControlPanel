@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/backup_backup_cat" >
+        <EditTextPreference
+            android:defaultValue="Backup"
+            android:key="backup_backup_name"
+            android:title="@string/backup_pick_name" />
+
+        <Preference
+            android:key="backup_create_backup"
+            android:title="@string/backup_create_backup" />
+    </PreferenceCategory>
+    
+    
+    <PreferenceCategory android:title="@string/backup_restore_cat" >
+        <Preference
+            android:key="backup_restore_backup"
+            android:title="@string/backup_restore_backup"/>
+        <ListPreference
+            android:key="backup_restore_name"
+            android:defaultValue="-"
+            android:summary="%s"
+            android:title="@string/backup_restore_name"/>
+        <Preference
+            android:key="backup_restore_refresh"
+            android:title="@string/backup_restore_refresh"/>
+    </PreferenceCategory>
+    
+</PreferenceScreen>

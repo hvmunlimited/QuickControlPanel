@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      <rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="200"
+    android:fillAfter="false"
+    android:fillEnabled="false"
+    android:fromDegrees="-5"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:repeatCount="-1"
+    android:repeatMode="reverse"
+    android:toDegrees="5"/>
+-->
+
+<alpha xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="200"
+    android:fillAfter="false"
+    android:fillEnabled="false"
+    android:fromAlpha="1.0"
+    android:toAlpha="0.7"
+    android:repeatCount="-1"
+    android:repeatMode="reverse"/>

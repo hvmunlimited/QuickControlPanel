@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:widget="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/swipe_detector_enable_disable_cat" >
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="swipe_detector_service_enabled"
+            android:title="@string/swipe_detector_service_enable" />
+        
+        <CheckBoxPreference
+            android:title="@string/swipe_detector_enable"
+            android:defaultValue="true"
+            android:dependency="swipe_detector_service_enabled"
+            android:key="swipe_detector_enabled"/>
+        
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:dependency="swipe_detector_enabled"
+            android:key="lockscreen_swipe_detector_enabled"
+            android:title="@string/lockscreen_enable_detector_on_lockscreen" />
+        
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:title="@string/swipe_detector_google_now_launch"
+            android:dependency="swipe_detector_service_enabled"
+            android:key="swipe_detector_gn_gesture_enabled"/>
+        
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:title="@string/launch_launcher_icon"
+            android:dependency="swipe_detector_service_enabled"
+            android:key="launch_launcher_icon"/>
+        
+       
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="swipe_detector_service_enabled"
+            android:key="swipe_detector_load_on_boot"
+            android:title="@string/swipe_detector_load_on_boot" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/swipe_detector_position_cat" >
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="40"
+            android:dependency="swipe_detector_enabled"
+            android:key="dimens_swipe_detector_size_1"
+            android:persistent="true"
+            android:title="@string/swipe_detector_height_pref"
+            widget:maxValue="100"
+            widget:minValue="10"
+            widget:units="%" />
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="50"
+            android:dependency="swipe_detector_enabled"
+            android:key="dimens_swipe_detector_size_2"
+            android:persistent="true"
+            android:title="@string/swipe_detector_width_pref"
+            widget:maxValue="100"
+            widget:minValue="10"
+            widget:units="%" />
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="0"
+            android:dependency="swipe_detector_enabled"
+            android:key="swipe_detector_offset"
+            android:persistent="true"
+            android:title="@string/swipe_detector_offset"
+            widget:maxValue="100"
+            widget:minValue="-100"
+            widget:units="%" />
+
+        <ListPreference
+            android:defaultValue="MIDDLE"
+            android:dependency="swipe_detector_enabled"
+            android:entries="@array/detector_align_list"
+            android:entryValues="@array/detector_align_keys"
+            android:key="dimens_swipe_detector_align"
+            android:summary="%s"
+            android:title="@string/swipe_detector_align_pref" />
+        <ListPreference
+            android:defaultValue="UP"
+            android:dependency="swipe_detector_enabled"
+            android:entries="@array/detector_direction_list"
+            android:entryValues="@array/detector_direction_keys"
+            android:key="dimens_swipe_detector_direction"
+            android:summary="%s"
+            android:title="@string/swipe_detector_direction_pref" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/swipe_detector_misc_cat" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="swipe_detector_service_enabled"
+            android:key="swipe_detector_vibrate"
+            android:title="@string/swipe_detector_vibrate" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

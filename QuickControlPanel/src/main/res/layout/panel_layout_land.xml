@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:woodblock="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/additional_drag_handler"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false"
+    android:focusableInTouchMode="false">
+
+   <com.woodblockwithoutco.quickcontroldock.ui.view.drag.DragViewGroup
+        android:id="@id/panel_drag_handler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DFFFFFFF"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:longClickable="true" >
+
+        <FrameLayout
+            android:id="@+id/fourth_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_alignLeft="@id/landscape_pager"
+            android:layout_alignRight="@id/landscape_pager" />
+        
+         <TextView
+            android:id="@+id/test_version_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:text="@string/test_version"
+            android:visibility="invisible"/>
+
+
+        <ImageView
+            android:id="@+id/drag_handler_fake"
+            android:layout_width="@dimen/drag_handler_width"
+            android:layout_height="@dimen/drag_handler_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/drag_handler_margin"
+            android:clickable="true"
+            android:gravity="center"
+            android:longClickable="true"
+            android:src="@drawable/drag_handler" />
+
+        <com.woodblockwithoutco.quickcontroldock.ui.view.pager.PagerSwitcher
+            android:id="@+id/left_indicator"
+            android:layout_width="@dimen/arrow_width"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:paddingLeft="@dimen/arrow_padding"
+            woodblock:controlledPager="@id/landscape_pager"
+            woodblock:direction="left" />
+
+        <com.woodblockwithoutco.quickcontroldock.ui.view.pager.PagerSwitcher
+            android:id="@+id/right_indicator"
+            android:layout_width="@dimen/arrow_width"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:paddingRight="@dimen/arrow_padding"
+            woodblock:controlledPager="@id/landscape_pager"
+            woodblock:direction="right" />
+
+        <com.woodblockwithoutco.quickcontroldock.ui.view.pager.NonSwipeableViewPager
+            android:id="@id/landscape_pager"
+            android:paddingBottom="@dimen/sections_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_above="@id/fourth_section"
+            android:layout_below="@id/drag_handler_fake"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/mini_margin"
+            android:layout_marginLeft="@dimen/sections_margin"
+            android:layout_marginRight="@dimen/sections_margin"
+            android:layout_marginTop="@dimen/mini_margin"
+            android:layout_toLeftOf="@id/right_indicator"
+            android:layout_toRightOf="@id/left_indicator"
+            woodblock:enableSwipe="false" />
+        
+    </com.woodblockwithoutco.quickcontroldock.ui.view.drag.DragViewGroup>
+
+</RelativeLayout>

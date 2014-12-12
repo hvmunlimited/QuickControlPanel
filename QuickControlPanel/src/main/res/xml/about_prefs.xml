@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/about_app_version_cat" >
+        <Preference
+            android:key="about_app_version"
+            android:title="@string/about_app_version" />
+        <Preference
+            android:key="about_app_build"
+            android:title="@string/about_app_build" />
+        <Preference
+            android:key="about_app_name"
+            android:summary="@string/version_name"
+            android:title="@string/about_app_version_codename" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/about_feedback_cat" >
+        <Preference
+            android:key="send_feedback"
+            android:title="@string/about_feedback" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/about_legal_cat" >
+        <Preference
+            android:key="open_source_licenses"
+            android:title="@string/about_open_source_licenses" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/about_theme_kit_cat" >
+        <Preference
+            android:title="@string/about_theme_kit_download">
+             <intent android:action="android.intent.action.VIEW"
+                android:data="https://docs.google.com/file/d/0B3t-9ok4G37uMWo1VW1JSkZ1SE0" />
+        </Preference>
+        <Preference
+            android:key="about_copy_theme_kit_link"
+            android:title="@string/about_theme_pack_kit_link" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

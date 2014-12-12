@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:widget="http://schemas.android.com/apk/res-auto" >
+
+    <PreferenceCategory android:title="@string/shortcuts_enable_disable_cat" >
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="shortcuts_enable"
+            android:title="@string/shortcuts_enabled" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/shortcuts_select_cat" >
+        <Preference
+            android:dependency="shortcuts_enable"
+            android:key="pick_shortcuts"
+            android:title="@string/shortcuts_select" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/shortcuts_appearance_cat" >
+        
+        <ListPreference
+            android:title="@string/shortcut_launcher_icon_pack"
+            android:dependency="shortcuts_enable"
+            android:defaultValue="none"
+            android:summary="%s"
+            android:key="shortcuts_external_icon_pack"/>
+        
+        <Preference
+            android:title="@string/apply_icon_pack"
+            android:key="apply_icon_pack"/>
+        
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="shortcuts_enable"
+            android:key="shortcuts_title_show"
+            android:title="@string/shortcuts_titles_show" />
+
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="100"
+            android:dependency="shortcuts_enable"
+            android:key="shortcuts_size"
+            android:persistent="true"
+            android:title="@string/shortcuts_size"
+            widget:maxValue="200"
+            widget:minValue="80"
+            widget:units="px" />
+        
+         <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="5"
+            android:dependency="shortcuts_enable"
+            android:key="shortcuts_padding"
+            android:persistent="true"
+            android:title="@string/shortcuts_padding"
+            widget:maxValue="16"
+            widget:minValue="0"
+            widget:units="dp" />
+        
+       
+        
+         <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="25"
+            android:dependency="shortcuts_enable"
+            android:key="shortcuts_distance"
+            android:persistent="true"
+            android:title="@string/shortcuts_distance"
+            widget:maxValue="100"
+            widget:minValue="0"
+            widget:units="%" />
+        
+         <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="16"
+            android:dependency="shortcuts_enable"
+            android:key="shortcuts_title_size"
+            android:persistent="true"
+            android:title="@string/shortcuts_title_size"
+            widget:maxValue="50"
+            widget:minValue="6"
+            widget:units="sp" />
+    </PreferenceCategory>
+    
+
+</PreferenceScreen>

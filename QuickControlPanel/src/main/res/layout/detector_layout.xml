@@ -1,0 +1,8 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="@dimen/default_detector_height"
+    android:id="@+id/swipe_detector"
+    android:orientation="horizontal"
+    android:background="@color/detector_color"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:longClickable="true" />

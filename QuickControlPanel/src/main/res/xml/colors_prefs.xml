@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:colorpicker="http://schemas.android.com/apk/res-auto" >
+    
+    <PreferenceCategory android:title="@string/colors_themes">
+        <Preference
+            android:key="color_apply_white_theme"
+            android:title="@string/colors_apply_white_theme"/>
+        <Preference
+            android:key="color_apply_black_theme"
+            android:title="@string/colors_apply_black_theme"/>
+        <Preference
+            android:key="color_apply_material_theme"
+            android:title="@string/colors_apply_material_theme"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/colors_panel_background_cat" >
+        <afzkl.development.colorpickerview.preference.ColorPickerPreference
+            android:defaultValue="0xDFFFFFFF"
+            android:key="colors_panel_background_color"
+            android:title="@string/colors_panel_bg_color"
+            colorpicker:alphaChannelVisible="true" />
+        <afzkl.development.colorpickerview.preference.ColorPickerPreference
+            android:defaultValue="0xDFFFFFFF"
+            android:key="colors_panel_background_color_2"
+            android:title="@string/colors_panel_bg_color_2"
+            colorpicker:alphaChannelVisible="true" />
+        <afzkl.development.colorpickerview.preference.ColorPickerPreference
+            android:defaultValue="0xFFFFFFFF"
+            android:key="colors_section_background_color"
+            android:title="@string/colors_section_bg_color"
+            colorpicker:alphaChannelVisible="true" />
+        <afzkl.development.colorpickerview.preference.ColorPickerPreference
+            android:defaultValue="0xFFC0C0C0"
+            android:key="colors_section_shadow_color"
+            android:title="@string/colors_section_shadow_color"
+            colorpicker:alphaChannelVisible="true" />
+
+        <ListPreference
+            android:defaultValue="no_gradient"
+            android:entries="@array/colors_gradient_direction_list"
+            android:entryValues="@array/colors_gradient_direction_keys"
+            android:key="colors_gradient_direction"
+            android:summary="%s"
+            android:title="@string/colors_gradient_direction" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/colors_buttons_cat" >
+        <afzkl.development.colorpickerview.preference.ColorPickerPreference
+            android:defaultValue="0xFF909090"
+            android:key="colors_idle_color"
+            android:title="@string/colors_idle_color" />
+        <afzkl.development.colorpickerview.preference.ColorPickerPreference
+            android:defaultValue="0xFF202020"
+            android:key="colors_active_color"
+            android:title="@string/colors_active_color" />
+        <afzkl.development.colorpickerview.preference.ColorPickerPreference
+            android:defaultValue="0xB0DFDFDF"
+            android:key="colors_pressed_color"
+            android:title="@string/colors_pressed_color"
+            colorpicker:alphaChannelVisible="true" />
+        <afzkl.development.colorpickerview.preference.ColorPickerPreference
+            android:defaultValue="0x00000000"
+            android:key="colors_toggle_bg_color"
+            android:title="@string/colors_bg_color"
+            colorpicker:alphaChannelVisible="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/colors_seekbar_cat" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="colors_seekbar_icon_same_as_active_color"
+            android:disableDependentsState="true"
+            android:title="@string/colors_seekbar_active_color" />
+        
+        <afzkl.development.colorpickerview.preference.ColorPickerPreference
+            android:defaultValue="0xFF202020"
+            android:dependency="colors_seekbar_icon_same_as_active_color"
+            android:key="colors_seekbar_icon_color"
+            android:title="@string/colors_seekbars_icon_color" />
+        
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="colors_disable_seekbar_coloring"
+            android:title="@string/colors_seekbar_disable_color" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:disableDependentsState="true"
+            android:key="colors_seekbar_thumb_same_color"
+            android:title="@string/colors_seekbar_progress_thumb_same_color" />
+
+        <afzkl.development.colorpickerview.preference.ColorPickerPreference
+            android:defaultValue="0xFF33B5E5"
+            android:key="colors_seekbar_progress_color"
+            android:title="@string/colors_seekbar_progress_color" />
+        <afzkl.development.colorpickerview.preference.ColorPickerPreference
+            android:defaultValue="0xFF33B5E5"
+            android:dependency="colors_seekbar_thumb_same_color"
+            android:key="colors_seekbar_thumb_color"
+            android:title="@string/colors_seekbar_thumb_color" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/colors_text_cat" >
+        <afzkl.development.colorpickerview.preference.ColorPickerPreference
+            android:defaultValue="0xFF000000"
+            android:key="colors_text"
+            android:title="@string/colors_text_color" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

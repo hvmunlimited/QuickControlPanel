@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:widget="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/general_panel_appearance_cat" >
+        
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:title="@string/general_use_same_layout_for_landscape"
+            android:key="panels_same_layout_landscape"/>
+        
+        <CheckBoxPreference
+            android:key="close_on_span_touch"
+            android:defaultValue="false"
+            android:title="@string/general_close_on_span_touch"/>
+        
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="15"
+            android:key="panel_drag_handler_width"
+            android:persistent="true"
+            android:title="@string/general_drag_handler_width"
+            widget:maxValue="100"
+            widget:minValue="0"
+            widget:units="%" />
+        
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="0"
+            android:key="panels_offset"
+            android:persistent="true"
+            android:title="@string/general_panel_offset"
+            widget:maxValue="25"
+            widget:minValue="-25"
+            widget:units="%" />
+
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="8"
+            android:key="panels_margin"
+            android:persistent="true"
+            android:title="@string/general_panel_panels_distance"
+            widget:maxValue="24"
+            widget:minValue="0"
+            widget:units="dp" />
+        
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="0"
+            android:key="panels_span"
+            android:persistent="true"
+            android:title="@string/general_panel_span"
+            widget:maxValue="70"
+            widget:minValue="0"
+            widget:units="%" />
+        
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="0"
+            android:key="panels_span_landscape"
+            android:persistent="true"
+            android:title="@string/general_panel_span_landscape"
+            widget:maxValue="70"
+            widget:minValue="0"
+            widget:units="%" />
+        
+        
+        
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="30"
+            android:key="dim_amount"
+            android:persistent="true"
+            android:title="@string/general_dim_amount"
+            widget:maxValue="100"
+            widget:minValue="0"
+            widget:units="%" />
+        
+       
+        
+        <ListPreference
+            android:defaultValue="-"
+            android:entries="@array/general_external_pack_list"
+            android:entryValues="@array/general_external_pack_keys"
+            android:key="external_resource_package"
+            android:summary="%s"
+            android:title="@string/general_external_icon_pack" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/general_advanced_cat" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="force_foreground"
+            android:title="@string/general_advanced_force_foreground_mode" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="debug_cat"
+        android:title="@string/general_debug_cat" >
+        
+        <Preference
+            android:summary="@string/general_debug_warning_summary"
+            android:title="@string/general_debug_warning" />
+        
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="acra.disable"
+            android:title="@string/general_advanced_disable_acra" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="debug_swipe_detector_visible"
+            android:title="@string/general_debug_show_swipe_detector" />
+
+        <Preference
+            android:key="force_crash"
+            android:title="@string/general_crash_app" />
+        
+        <Preference
+            android:key="list_prefs"
+            android:title="@string/general_list_prefs"/>
+        
+        <Preference
+            android:key="list_prefs_xml"
+            android:title="@string/general_list_prefs_xml"/>
+        
+        <Preference
+            android:key="save_prefs_xml"
+            android:title="@string/general_save_prefs_xml"/>
+        
+        <Preference
+            android:key="post_notification_dismissable"
+            android:title="@string/general_post_notification"/>
+        
+        <Preference
+            android:key="post_notification_dismissable_delay"
+            android:title="@string/general_post_notification_delay"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

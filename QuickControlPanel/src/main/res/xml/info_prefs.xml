@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:widget="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/info_enable_disable_cat" >
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="info_enabled"
+            android:title="@string/info_panel_enable" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/info_rearrange_cat" >
+        <Preference
+            android:dependency="info_enabled"
+            android:key="info_order_click"
+            android:title="@string/info_enable_disable_order" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/info_appearance" >
+        <EditTextPreference
+            android:defaultValue="E, dd/MM"
+            android:dependency="info_enabled"
+            android:dialogMessage="@string/info_date_format_message"
+            android:digits="GyMwWDdFE, /:"
+            android:key="info_date_format"
+            android:title="@string/info_date_format" />
+
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="16"
+            android:dependency="info_enabled"
+            android:key="info_items_text_size"
+            android:persistent="true"
+            android:title="@string/info_text_size"
+            widget:units="sp"
+            widget:maxValue="24"
+            widget:minValue="5" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

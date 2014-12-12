@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:widget="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/toggles_enable_disable_cat" >
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="toggles_buttons_enabled"
+            android:title="@string/toggles_toggles_enabled" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/toggles_arrange_cat" >
+        <Preference
+            android:dependency="toggles_buttons_enabled"
+            android:key="toggle_order_click"
+            android:title="@string/toggles_toggle_order" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/toggles_toggle_specific_cat" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="toggles_buttons_enabled"
+            android:key="toggle_enable_long_click"
+            android:title="@string/toggles_enable_long_click" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:dependency="toggles_buttons_enabled"
+            android:key="toggle_close_after_click"
+            android:title="@string/toggles_close_after_click" />
+        <ListPreference
+            android:defaultValue="30s/1m/2m"
+            android:dependency="toggles_buttons_enabled"
+            android:entries="@array/toggle_screen_timeout_modes_list"
+            android:entryValues="@array/toggle_screen_timeout_modes_keys"
+            android:key="toggles_timeout_mode"
+            android:summary="%s"
+            android:title="@string/toggles_display_timeout_modes" />
+        <ListPreference
+            android:defaultValue="default"
+            android:dependency="toggles_buttons_enabled"
+            android:entries="@array/toggle_flash_type_list"
+            android:entryValues="@array/toggle_flash_type_keys"
+            android:key="toggles_flashlight_type"
+            android:summary="%s"
+            android:title="@string/toggles_flashlight_type" />
+        <ListPreference
+            android:defaultValue="normal|vibrate|silent"
+            android:dependency="toggles_buttons_enabled"
+            android:entries="@array/toggle_sound_modes_list"
+            android:entryValues="@array/toggle_sound_modes_keys"
+            android:key="toggles_sound_modes"
+            android:summary="%s"
+            android:title="@string/toggles_sound_modes" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/toggles_appearance_cat" >
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="60"
+            android:dependency="toggles_buttons_enabled"
+            android:key="toggles_buttons_size"
+            android:persistent="true"
+            android:title="@string/toggles_toggle_size"
+            widget:maxValue="160"
+            widget:minValue="20"
+            widget:units="px" />
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="15"
+            android:dependency="toggles_buttons_enabled"
+            android:key="toggles_buttons_distance"
+            android:persistent="true"
+            android:title="@string/toggles_distance"
+            widget:maxValue="100"
+            widget:minValue="0"
+            widget:units="%" />
+
+        <ListPreference
+            android:defaultValue="none"
+            android:dependency="toggles_buttons_enabled"
+            android:entries="@array/toggle_border_type_list"
+            android:entryValues="@array/toggle_border_keys"
+            android:key="toggles_border_drawable"
+            android:summary="%s"
+            android:title="@string/toggles_border_shape" />
+
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="5"
+            android:dependency="toggles_buttons_enabled"
+            android:key="toggles_border_corner_radius"
+            android:persistent="true"
+            android:title="@string/toggles_border_corner_radius"
+            widget:maxValue="60"
+            widget:minValue="0"
+            widget:units="px" />
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="2"
+            android:dependency="toggles_buttons_enabled"
+            android:key="toggles_border_width"
+            android:persistent="true"
+            android:title="@string/toggles_border_width"
+            widget:maxValue="14"
+            widget:minValue="1"
+            widget:units="px" />
+
+        <ListPreference
+            android:defaultValue="square"
+            android:dependency="toggles_buttons_enabled"
+            android:entries="@array/toggle_bg_type_list"
+            android:entryValues="@array/toggle_bg_keys"
+            android:key="toggles_bg_drawable"
+            android:summary="%s"
+            android:title="@string/toggles_bg_shape" />
+
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="5"
+            android:dependency="toggles_buttons_enabled"
+            android:key="toggles_background_corner_radius"
+            android:persistent="true"
+            android:title="@string/toggles_bg_corner_radius"
+            widget:maxValue="60"
+            widget:minValue="0"
+            widget:units="px" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/toggles_seekbar_cat" >
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="10"
+            android:dependency="toggles_buttons_enabled"
+            android:key="toggle_brightness_min_value"
+            android:persistent="true"
+            android:title="@string/toggles_brightness_min"
+            widget:maxValue="30"
+            widget:minValue="1" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:dependency="toggles_buttons_enabled"
+            android:key="toggles_seekbars_on_top"
+            android:title="@string/toggles_seekbars_on_top" />
+
+        <Preference
+            android:dependency="toggles_buttons_enabled"
+            android:key="toggles_seekbars_order_click"
+            android:title="@string/toggles_seekbars_order" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

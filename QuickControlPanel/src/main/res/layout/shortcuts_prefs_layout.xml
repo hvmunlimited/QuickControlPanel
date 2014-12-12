@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dslv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10" 
+    android:layout_marginBottom="@dimen/standard_margin">
+
+    <com.mobeta.android.dslv.DragSortListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/dslv_margin"
+        android:layout_weight="9"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="@dimen/dslv_shortcuts_divider_height"
+        dslv:collapsed_height="@dimen/dslv_collapsed_height"
+        dslv:drag_enabled="true"
+        dslv:drag_scroll_start="0.33"
+        dslv:float_alpha="1"
+        dslv:float_background_color="@android:color/transparent"
+        dslv:max_drag_scroll_speed="0.5"
+        dslv:slide_shuffle_speed="0.3" />
+
+    <LinearLayout
+        android:id="@+id/add_new_app"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/add_new_app_bg"
+        android:clickable="true"
+        android:gravity="center"
+        android:padding="@dimen/add_new_app_padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:drawableLeft="@android:drawable/ic_menu_add"
+            android:gravity="center_vertical"
+            android:text="@string/shortcuts_add_new_app"
+            android:textSize="@dimen/add_new_app_text_size" />
+    </LinearLayout>
+    
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textSize="@dimen/hint_text_size"
+        android:text="@string/shortcut_icon_hint"/>
+
+</LinearLayout>

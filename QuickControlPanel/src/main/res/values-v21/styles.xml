@@ -1,0 +1,17 @@
+<resources>
+
+    <style name="PreferencesTheme" parent="@android:style/Theme.Material">
+       <item name="android:actionBarStyle">@style/PreferenceActionBar</item>
+    </style>
+
+    <style name="PreferenceActionBar" parent="@android:style/Widget.Material.ActionBar">
+    </style>
+    
+    <style name="AssistantTheme" parent="@android:style/Theme.Translucent.NoTitleBar">
+    </style>
+    
+    <style name="SeekBarStyle" parent="@android:style/Widget.Material.Light.SeekBar">
+        
+    </style>
+
+</resources>

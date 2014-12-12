@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:widget="http://schemas.android.com/apk/res-auto" >
+
+    <PreferenceCategory android:title="@string/notifications_enable_cat" >
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="notifications_enabled"
+            android:title="@string/notifications_enable_cat" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/notifications_filter_cat" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="notifications_enabled"
+            android:key="notifications_hide_foreground"
+            android:title="@string/notifications_hide_foreground_notification" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:dependency="notifications_enabled"
+            android:key="notifications_hide_ongoing"
+            android:title="@string/notifications_ignore_ongoing" />
+
+        <Preference
+            android:dependency="notifications_enabled"
+            android:key="notifications_ignore"
+            android:title="@string/notifications_ignore_apps" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/notifications_misc">
+        <CheckBoxPreference
+            android:title="@string/notifications_show_toast"
+            android:defaultValue="false"
+            android:key="notifications_show_toast"
+            android:dependency="notifications_enabled"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:widget="http://schemas.android.com/apk/res-auto" >
+
+    <PreferenceCategory android:title="@string/music_enable_disable_cat" >
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="music_panel_enabled"
+            android:title="@string/music_panel_enabled" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/music_metadata_cat" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="music_panel_enabled"
+            android:key="music_enable_artist"
+            android:title="@string/music_metadata_enable_artist" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="music_panel_enabled"
+            android:key="music_enable_title"
+            android:title="@string/music_metadata_enable_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="music_panel_enabled"
+            android:key="music_enable_album"
+            android:title="@string/music_metadata_enable_album" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="music_panel_enabled"
+            android:key="music_artwork_enabled"
+            android:title="@string/music_enable_artwork"/>
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/music_appearance_cat" >
+         <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="8"
+            android:dependency="music_artwork_enabled"
+            android:key="music_artwork_padding"
+            android:persistent="true"
+            android:title="@string/music_artwork_padding"
+            widget:maxValue="24"
+            widget:minValue="4"
+            widget:units="dp"/>
+         <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="120"
+            android:dependency="music_artwork_enabled"
+            android:key="music_artwork_size"
+            android:persistent="true"
+            android:title="@string/music_artwork_size"
+            widget:maxValue="220"
+            widget:minValue="60"
+            widget:units="dp"/>
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="80"
+            android:dependency="music_panel_enabled"
+            android:key="music_button_size"
+            android:persistent="true"
+            android:title="@string/music_buttons_size"
+            widget:maxValue="160"
+            widget:minValue="40"
+            widget:units="px" />
+        <com.curvefish.widget.preference.SliderPreference
+            android:defaultValue="16"
+            android:dependency="music_panel_enabled"
+            android:key="music_metadata_size"
+            android:persistent="true"
+            android:title="@string/music_metadata_text_size"
+            widget:maxValue="32"
+            widget:minValue="8"
+            widget:units="sp"/>
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/music_playback_control_cat" 
+        android:key="music_playback_control_cat">
+        <ListPreference
+            android:dependency="music_broadcast_event"
+            android:summary="%s"
+            android:defaultValue="broadcast"
+            android:key="music_default_player"
+            android:title="@string/music_default_player"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="music_panel_enabled"
+            android:key="music_broadcast_event"
+            android:title="@string/music_playback_enable_broadcast_start" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="music_panel_enabled"
+            android:key="music_enable_scrubbing"
+            android:title="@string/music_playback_enable_scrubber" />
+    </PreferenceCategory>
+    
+
+</PreferenceScreen>

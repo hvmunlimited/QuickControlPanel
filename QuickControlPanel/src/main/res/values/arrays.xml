@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="detector_align_list">
+        <item>@string/swipe_detector_align_left</item>
+        <item>@string/swipe_detector_align_middle</item>
+        <item>@string/swipe_detector_align_right</item>
+    </string-array>
+    <string-array name="detector_direction_list">
+        <item>@string/swipe_detector_direction_left</item>
+        <item>@string/swipe_detector_direction_up</item>
+        <item>@string/swipe_detector_direction_right</item>
+    </string-array>
+    <string-array name="toggle_border_type_list">
+        <item>@string/toggle_border_shape_none</item>
+        <item>@string/toggle_border_shape_circle</item>
+        <item>@string/toggle_border_shape_square</item>
+        <item>@string/toggle_border_shape_rounded</item>
+    </string-array>
+    <string-array name="toggle_bg_type_list">
+        <item>@string/toggle_bg_shape_circle</item>
+        <item>@string/toggle_bg_shape_square</item>
+        <item>@string/toggle_bg_shape_rounded</item>
+    </string-array>
+    <string-array name="toggle_flash_type_list">
+        <item>@string/toggle_flash_type_default</item>
+        <item>@string/toggle_flash_type_htc</item>
+        <item>@string/toggle_flash_type_nosurfaceview</item>
+    </string-array>
+    <string-array name="toggle_sound_modes_list">
+        <item>@string/toggle_sound_modes_normal_vibrate_silent</item>
+        <item>@string/toggle_sound_modes_normal_vibrate</item>
+        <item>@string/toggle_sound_modes_normal_silent</item>
+        <item>@string/toggle_sound_modes_vibrate_silent</item>
+    </string-array>
+    <string-array name="toggle_screen_timeout_modes_list">
+        <item>@string/toggles_timeout_modes_1</item>
+        <item>@string/toggles_timeout_modes_2</item>
+    </string-array>
+    <string-array name="toggles_list">
+        <item>@string/toggle_data</item>
+        <item>@string/toggle_wifi</item>
+        <item>@string/toggle_bluetooth</item>
+        <item>@string/toggle_sound</item>
+        <item>@string/toggle_rotate</item>
+        <item>@string/toggle_airplane</item>
+        <item>@string/toggle_gps</item>
+        <item>@string/toggle_settings</item>
+        <item>@string/toggle_flash</item>
+        <item>@string/toggle_sync</item>
+        <item>@string/toggle_wifi_ap</item>
+        <item>@string/toggle_lock_now</item>
+        <item>@string/toggle_auto_brightness</item>
+        <item>@string/toggle_screen_timeout</item>
+    </string-array>
+    <string-array name="colors_gradient_direction_list">
+        <item>@string/colors_no_gradient</item>
+        <item>@string/colors_gradient_bottom_left_top_right</item>
+        <item>@string/colors_gradient_bottom_top</item>
+        <item>@string/colors_gradient_bottom_right_top_left</item>
+        <item>@string/colors_gradient_left_right</item>
+        <item>@string/colors_gradient_right_left</item>
+        <item>@string/colors_gradient_top_left_bottom_right</item>
+        <item>@string/colors_gradient_top_bottom</item>
+        <item>@string/colors_gradient_top_right_bottom_left</item>
+    </string-array>
+    <string-array name="info_items_list">
+        <item>@string/info_date_text</item>
+        <item>@string/info_time_text</item>
+        <item>@string/info_battery_text</item>
+    </string-array>
+    <string-array name="general_external_pack_list">
+   	    <item>@string/general_icon_pack_none</item>
+   	</string-array>
+    
+   
+    <string-array name="detector_align_keys">
+        <item>LEFT</item>
+        <item>MIDDLE</item>
+        <item>RIGHT</item>
+    </string-array>
+    <string-array name="detector_direction_keys">
+        <item>LEFT</item>
+        <item>UP</item>
+        <item>RIGHT</item>
+    </string-array>
+    <string-array name="toggle_border_keys">
+        <item>none</item>
+        <item>circle</item>
+        <item>square</item>
+        <item>rounded</item>
+    </string-array>
+    <string-array name="toggle_bg_keys">
+        <item>circle</item>
+        <item>square</item>
+        <item>rounded</item>
+    </string-array>
+    <string-array name="toggle_flash_type_keys">
+        <item>default</item>
+        <item>htc</item>
+        <item>nosurfaceview</item>
+    </string-array>
+    <string-array name="toggle_sound_modes_keys">
+        <item>normal|vibrate|silent</item>
+        <item>normal|vibrate</item>
+        <item>normal|silent</item>
+        <item>vibrate|silent</item>
+    </string-array>
+    <string-array name="toggle_screen_timeout_modes_keys">
+        <item>15s/30s/1m</item>
+        <item>30s/1m/2m</item>
+    </string-array>
+    <string-array name="toggles_keys">
+        <item>DATA</item>
+        <item>WIFI</item>
+        <item>BLUETOOTH</item>
+        <item>SOUND</item>
+        <item>ROTATE</item>
+        <item>AIRPLANE</item>
+        <item>GPS</item>
+        <item>SETTINGS</item>
+        <item>FLASHLIGHT</item>
+        <item>SYNC</item>
+        <item>WIFI_AP</item>
+        <item>LOCK_NOW</item>
+        <item>AUTO_BRIGHTNESS</item>
+        <item>SCREEN_TIMEOUT</item>
+    </string-array>
+    <string-array name="colors_gradient_direction_keys">
+        <item>no_gradient</item>
+        <item>BL_TR</item>
+        <item>BOTTOM_TOP</item>
+        <item>BR_TL</item>
+        <item>LEFT_RIGHT</item>
+        <item>RIGHT_LEFT</item>
+        <item>TL_BR</item>
+        <item>TOP_BOTTOM</item>
+        <item>TR_BL</item>
+    </string-array>
+    <string-array name="info_items_keys">
+        <item>DATE</item>
+        <item>TIME</item>
+        <item>BATTERY</item>
+    </string-array>
+   	<string-array name="general_external_pack_keys">
+   	    <item>-</item>
+   	</string-array>
+   	
+   	<string-array name="for_brave_souls">
+   	    <item>@string/for_brave_souls_1</item>
+   	    <item>@string/for_brave_souls_2</item>
+   	    <item>@string/for_brave_souls_3</item>
+   	    <item>@string/for_brave_souls_4</item>
+   	    <item>@string/for_brave_souls_5</item>
+   	    <item>@string/for_brave_souls_6</item>
+   	    <item>@string/for_brave_souls_7</item>
+   	    <item>@string/for_brave_souls_8</item>
+   	    <item>@string/for_brave_souls_9</item>
+   	    <item>@string/for_brave_souls_10</item>
+   	</string-array>
+
+</resources>

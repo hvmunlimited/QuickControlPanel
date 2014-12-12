@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <header
+        android:fragment="com.woodblockwithoutco.quickcontroldock.prefs.ui.fragments.SwipeDetectorPrefsFragment"
+        android:icon="@drawable/ic_prefs_start"
+        android:title="@string/swipe_detector_prefs" />
+    
+    <header
+        android:fragment="com.woodblockwithoutco.quickcontroldock.prefs.ui.fragments.GeneralPrefsFragment"
+        android:icon="@drawable/ic_prefs_general"
+        android:title="@string/general_prefs" />
+    
+    <header
+        android:fragment="com.woodblockwithoutco.quickcontroldock.prefs.ui.fragments.ColorsPrefsFragment"
+        android:icon="@drawable/ic_prefs_colors"
+        android:title="@string/colors_prefs" />
+    <header
+        android:fragment="com.woodblockwithoutco.quickcontroldock.prefs.ui.fragments.TogglesPrefsFragment"
+        android:icon="@drawable/ic_prefs_toggles"
+        android:title="@string/toggles_pref" />
+    <header
+        android:fragment="com.woodblockwithoutco.quickcontroldock.prefs.ui.fragments.MusicPrefsFragment"
+        android:icon="@drawable/ic_prefs_music"
+        android:title="@string/music_section_prefs" />
+    <header
+        android:fragment="com.woodblockwithoutco.quickcontroldock.prefs.ui.fragments.ShortcutsPrefsFragment"
+        android:icon="@drawable/ic_prefs_shortcuts"
+        android:title="@string/shortcuts_prefs" />
+    <header
+        android:fragment="com.woodblockwithoutco.quickcontroldock.prefs.ui.fragments.NotificationsPrefsFragment"
+        android:icon="@drawable/ic_prefs_notifications"
+        android:title="@string/notifications_prefs"/>
+    <header
+        android:fragment="com.woodblockwithoutco.quickcontroldock.prefs.ui.fragments.InfoPanelPrefsFragment"
+        android:icon="@drawable/ic_prefs_info"
+        android:title="@string/info_panel_prefs" />
+    
+     <header
+        android:fragment="com.woodblockwithoutco.quickcontroldock.prefs.ui.fragments.PanelsOrderPrefsFragment"
+        android:icon="@drawable/ic_prefs_order"
+        android:title="@string/panels_order_prefs" />
+
+    <header
+        android:fragment="com.woodblockwithoutco.quickcontroldock.prefs.ui.fragments.BackupPrefsFragment"
+        android:icon="@drawable/ic_prefs_backup"
+        android:title="@string/backup_prefs" />
+    
+    <header
+        android:fragment="com.woodblockwithoutco.quickcontroldock.prefs.ui.fragments.AboutPrefsFragment"
+        android:icon="@drawable/ic_prefs_about"
+        android:title="@string/about_prefs"/>
+
+</preference-headers>
