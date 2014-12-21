@@ -16,6 +16,7 @@
 package com.woodblockwithoutco.quickcontroldock.model.impl.actions;
 
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 
@@ -30,8 +31,11 @@ public class FlashlightAction extends ToggleAction {
 	
 	public FlashlightAction(Context context) {
 		mContext = context;
+        ComponentName serviceComponent = new ComponentName(mContext, FlashlightService.class);
 		mTurnOnIntent = new Intent(mContext.getPackageName() + ".START_FLASH");
+        mTurnOnIntent.setComponent(serviceComponent);
 		mTurnOffIntent = new Intent(mContext.getPackageName() + ".STOP_FLASH");
+        mTurnOffIntent.setComponent(serviceComponent);
 	}
 	
 	@Override
