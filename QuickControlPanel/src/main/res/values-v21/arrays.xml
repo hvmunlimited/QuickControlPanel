@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="toggle_flash_type_list">
+        <item>@string/toggle_flash_type_default</item>
+        <item>@string/toggle_flash_type_htc</item>
+        <item>@string/toggle_flash_type_nosurfaceview</item>
+        <item>@string/toggle_flash_type_camera2</item>
+    </string-array>
+    <string-array name="toggle_flash_type_keys">
+        <item>default</item>
+        <item>htc</item>
+        <item>nosurfaceview</item>
+        <item>camera2</item>
+    </string-array>
+</resources>
