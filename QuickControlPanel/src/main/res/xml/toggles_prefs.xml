@@ -99,7 +99,7 @@
             widget:units="px" />
 
         <ListPreference
-            android:defaultValue="square"
+            android:defaultValue="circle"
             android:dependency="toggles_buttons_enabled"
             android:entries="@array/toggle_bg_type_list"
             android:entryValues="@array/toggle_bg_keys"
