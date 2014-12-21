@@ -4,6 +4,7 @@ Current To-Do list:
 -Make data toggle active for devices with root(for Lollipop only)
 -Make airplane mode toggle active for devices with root
 -Fix music controller bug(Need to update RemoteController library with MediaController class)
+-Fix sound mode selection bug
 -Refactor toggle background press state handling
 -Add ripple background press(Lollipop only)
 
