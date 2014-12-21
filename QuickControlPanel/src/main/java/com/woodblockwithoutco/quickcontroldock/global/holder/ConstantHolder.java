@@ -20,7 +20,7 @@ import android.view.WindowManager;
 public class ConstantHolder {
 	
 	private static final boolean IS_EVAL = false;
-	private static final boolean IS_DEBUG = false;
+	private static final boolean IS_DEBUG = true;
 	
 	private static final int NORMAL_TYPE = WindowManager.LayoutParams.TYPE_PHONE;
 	private static final int LOCKSCREEN_TYPE = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR;
