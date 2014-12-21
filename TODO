@@ -6,6 +6,7 @@ Current To-Do list:
 -Fix music controller bug(Need to update RemoteController library with MediaController class)
 -Add Camera2 flashlight support and make it default for Lollipop
 -Refactor toggle background press state handling
+-Add ripple background press(Lollipop only)
 
 Done:
 -Add color for Material theme
