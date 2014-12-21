@@ -220,7 +220,6 @@ public class TogglesResolver extends BasePrefsResolver {
         if(!isLollipop && "camera2".equals(type)) {
             type = "default";
         }
-        android.util.Log.d("woodblocktag", "type = " + type);
 		return type;
 	}
 
