@@ -50,6 +50,7 @@
     <string name="toggle_flash_type_default">Default</string>
     <string name="toggle_flash_type_htc">HTC</string>
     <string name="toggle_flash_type_nosurfaceview">Disable SurfaceView</string>
+    <string name="toggle_flash_type_camera2">Android 5.0 Camera</string>
     <string name="persistent_flash_active">Flashlight active</string>
     <string name="persistent_flash_active_tap">Tap to deactivate</string>
     <string name="airplane_mode_unavailable">Airplane mode control is unavailable for your version of Android. You can use Xposed module called \"Airplane Mode Helper\" to fix that.</string>
@@ -272,6 +273,7 @@
     <string name="notifications_misc">Miscellaneous</string>
     <string name="service_name">Music control service</string>
 
+    <string name="camera_session_error">Error in camera session</string>
     <string name="camera_error">Failed to gain access to camera</string>
     <string name="camera_error_code">Failed to gain access to camera, error code = </string>
     <string name="panel_notifications">Notifications</string>

@@ -276,5 +276,7 @@
     <string name="service_name">Сервис управления музыкой</string>
     <string name="camera_error">Не удалось получить доступ к камере</string>
     <string name="camera_error_code">Не удалось получить доступ к камере, код ошибки = </string>
+    <string name="toggle_flash_type_camera2">Камера Android 5.0</string>
+    <string name="camera_session_error">Ошибка при открытии сессии камеры</string>
 
 </resources>

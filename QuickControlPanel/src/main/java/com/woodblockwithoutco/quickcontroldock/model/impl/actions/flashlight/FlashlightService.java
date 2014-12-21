@@ -16,6 +16,7 @@
 package com.woodblockwithoutco.quickcontroldock.model.impl.actions.flashlight;
 
 import com.woodblockwithoutco.quickcontroldock.global.holder.ConstantHolder;
+import com.woodblockwithoutco.quickcontroldock.model.impl.actions.flashlight.managers.Camera2FlashlightManipulator;
 import com.woodblockwithoutco.quickcontroldock.model.impl.actions.flashlight.managers.DefaultFlashlightManipulator;
 import com.woodblockwithoutco.quickcontroldock.model.impl.actions.flashlight.managers.FlashlightManipulator;
 import com.woodblockwithoutco.quickcontroldock.model.impl.actions.flashlight.managers.HTCFlashlightManipulator;
@@ -36,6 +37,7 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.view.Gravity;
 import android.view.SurfaceView;
+import android.view.TextureView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -49,7 +51,7 @@ public class FlashlightService extends Service {
 
 	private FlashlightManipulator mFlashManipulator;
 	private LinearLayout mContainer;
-	private SurfaceView mDummySurfaceView;
+    private View mDummyView;
 
 	private BroadcastReceiver mScreenOffReceiver;
 	private BroadcastReceiver mStopServiceReceiver;
@@ -100,9 +102,6 @@ public class FlashlightService extends Service {
 		mContainer.setLayoutParams(lparams);
 		mContainer.setOrientation(LinearLayout.VERTICAL);
 
-
-
-
 		mTurnOffButton = new ImageButton(getApplicationContext());
 		mTurnOffButton.setImageResource(R.drawable.ic_persistent_flash);
 		mTurnOffButton.setBackgroundColor(0x80000000);
@@ -129,23 +128,33 @@ public class FlashlightService extends Service {
 		String method = TogglesResolver.getFlashlightType(getApplicationContext());
 
 		if(method.equals("default")) {
-			mDummySurfaceView = new SurfaceView(getApplicationContext());
-			mDummySurfaceView.setAlpha(0.01f);
-			ViewGroup.LayoutParams sparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 1);
-			mDummySurfaceView.setLayoutParams(sparams);
-			mFlashManipulator = new DefaultFlashlightManipulator(mDummySurfaceView);
-			mContainer.addView(mDummySurfaceView);
+            SurfaceView dummySurfaceView = new SurfaceView(getApplicationContext());
+            dummySurfaceView.setAlpha(0.01f);
+            ViewGroup.LayoutParams sparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+            dummySurfaceView.setLayoutParams(sparams);
+            mFlashManipulator = new DefaultFlashlightManipulator(dummySurfaceView);
+            mContainer.addView(dummySurfaceView);
+            mDummyView = dummySurfaceView;
 		} else if(method.equals("htc")) {
 			mFlashManipulator = new HTCFlashlightManipulator();
 		} else if(method.equals("nosurfaceview")) {
 			mFlashManipulator = new NoSurfaceViewFlashlightManipulator();
-		} else {
-			mDummySurfaceView = new SurfaceView(getApplicationContext());
-			mDummySurfaceView.setAlpha(0.01f);
+		} else if(method.equals("camera2")) {
+            TextureView dummyTextureView = new TextureView(getApplicationContext());
+            dummyTextureView.setAlpha(0);
+            ViewGroup.LayoutParams sparams = new ViewGroup.LayoutParams(176, 144);
+            dummyTextureView.setLayoutParams(sparams);
+            mFlashManipulator = new Camera2FlashlightManipulator(getApplicationContext(), dummyTextureView);
+            mContainer.addView(dummyTextureView);
+            mDummyView = dummyTextureView;
+        } else {
+            SurfaceView dummySurfaceView = new SurfaceView(getApplicationContext());
+			dummySurfaceView.setAlpha(0.01f);
 			ViewGroup.LayoutParams sparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 1);
-			mDummySurfaceView.setLayoutParams(sparams);
-			mFlashManipulator = new DefaultFlashlightManipulator(mDummySurfaceView);
-			mContainer.addView(mDummySurfaceView);
+			dummySurfaceView.setLayoutParams(sparams);
+			mFlashManipulator = new DefaultFlashlightManipulator(dummySurfaceView);
+			mContainer.addView(dummySurfaceView);
+            mDummyView = dummySurfaceView;
 		}
 
 		mWindowManager.addView(mContainer, params);
