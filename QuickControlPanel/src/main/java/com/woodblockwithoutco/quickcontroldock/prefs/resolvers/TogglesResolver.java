@@ -25,6 +25,9 @@ import com.woodblockwithoutco.quickcontroldock.util.ScreenUtils;
 import com.woodblockwithoutco.quickcontroldock.R;
 
 import android.content.Context;
+import android.os.Build;
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
 
 public class TogglesResolver extends BasePrefsResolver {
 
@@ -211,7 +214,14 @@ public class TogglesResolver extends BasePrefsResolver {
 	}
 
 	public static String getFlashlightType(Context context) {
-		return getString(context, Keys.Toggles.FLASHLIGHT_TYPE, "default");
+        boolean isLollipop = VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP;
+        String defaultType = isLollipop ? "camera2" : "default";
+        String type = getString(context, Keys.Toggles.FLASHLIGHT_TYPE, defaultType);
+        if(!isLollipop && "camera2".equals(type)) {
+            type = "default";
+        }
+        android.util.Log.d("woodblocktag", "type = " + type);
+		return type;
 	}
 
 	public static int getButtonDistance(Context context) {

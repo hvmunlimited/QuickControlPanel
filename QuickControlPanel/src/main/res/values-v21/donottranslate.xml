@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_flashlight_mode" translatable="false">camera2</string>
+</resources>

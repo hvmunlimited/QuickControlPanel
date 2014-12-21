@@ -4,10 +4,10 @@ Current To-Do list:
 -Make data toggle active for devices with root(for Lollipop only)
 -Make airplane mode toggle active for devices with root
 -Fix music controller bug(Need to update RemoteController library with MediaController class)
--Add Camera2 flashlight support and make it default for Lollipop
 -Refactor toggle background press state handling
 -Add ripple background press(Lollipop only)
 
 Done:
+-Add Camera2 flashlight support and make it default for Lollipop
 -Add color for Material theme
 -Fix flashlight bug(for Lollipop only)

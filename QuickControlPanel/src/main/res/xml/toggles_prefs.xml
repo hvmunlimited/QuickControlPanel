@@ -34,7 +34,7 @@
             android:summary="%s"
             android:title="@string/toggles_display_timeout_modes" />
         <ListPreference
-            android:defaultValue="default"
+            android:defaultValue="@string/default_flashlight_mode"
             android:dependency="toggles_buttons_enabled"
             android:entries="@array/toggle_flash_type_list"
             android:entryValues="@array/toggle_flash_type_keys"

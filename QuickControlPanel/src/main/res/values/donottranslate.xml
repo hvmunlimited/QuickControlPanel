@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="default_flashlight_mode" translatable="false">default</string>
     <string name="version_name" translatable="false">Clarice</string>
     <string name="theme_kit_link" translatable="false">https://drive.google.com/file/d/0B3t-9ok4G37uNV8xN2hFaFV2c00</string>
 </resources>
