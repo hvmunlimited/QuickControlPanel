@@ -14,7 +14,6 @@ import android.hardware.camera2.CaptureRequest.Builder;
 import android.os.Build.VERSION_CODES;
 import android.os.Handler;
 import android.view.Surface;
-import android.view.SurfaceView;
 import android.view.TextureView;
 import android.view.TextureView.SurfaceTextureListener;
 import android.widget.Toast;
@@ -37,10 +36,10 @@ public class Camera2FlashlightManipulator implements FlashlightManipulator {
     private CameraDevice mDevice;
     private CameraCaptureSession mSession;
 
-    public Camera2FlashlightManipulator(Context context, TextureView surfaceView) {
+    public Camera2FlashlightManipulator(Context context, TextureView textureView) {
         mPendingRequest = false;
-        mHandler = surfaceView.getHandler();
-        surfaceView.setSurfaceTextureListener(new SurfaceTextureListener() {
+        mHandler = textureView.getHandler();
+        textureView.setSurfaceTextureListener(new SurfaceTextureListener() {
             @Override
             public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
                 mSurfaceTexture = surface;
@@ -52,7 +51,11 @@ public class Camera2FlashlightManipulator implements FlashlightManipulator {
 
             @Override
             public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
-
+                mSurfaceTexture = surface;
+                if(mPendingRequest) {
+                    mPendingRequest = false;
+                    turnFlashlightOn();
+                }
             }
 
             @Override
