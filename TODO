@@ -6,3 +6,4 @@ Current To-Do list:
 -Make airplane mode toggle active for devices with root
 -Fix music controller bug(Need to update RemoteController library with MediaController class)
 -Fix flashlight bug(for Lollipop only)
+-Refactor toggle background press state handling
