@@ -48,10 +48,10 @@ import android.widget.LinearLayout;
 public class FlashlightService extends Service {
 
 	private static final int NOTIFICATION_ID = 14;
+    private static final float SURFACE_ALPHA = 0.0f;
 
-	private FlashlightManipulator mFlashManipulator;
+    private FlashlightManipulator mFlashManipulator;
 	private LinearLayout mContainer;
-    private View mDummyView;
 
 	private BroadcastReceiver mScreenOffReceiver;
 	private BroadcastReceiver mStopServiceReceiver;
@@ -119,7 +119,7 @@ public class FlashlightService extends Service {
 		params.x = 0;
 		params.y = 0;
 		params.width = WindowManager.LayoutParams.WRAP_CONTENT;
-		params.height = params.width;
+		params.height = WindowManager.LayoutParams.WRAP_CONTENT;
 		params.gravity = Gravity.CENTER;
 		params.format = PixelFormat.TRANSLUCENT;
 
@@ -128,33 +128,30 @@ public class FlashlightService extends Service {
 		String method = TogglesResolver.getFlashlightType(getApplicationContext());
 
 		if(method.equals("default")) {
-            SurfaceView dummySurfaceView = new SurfaceView(getApplicationContext());
-            dummySurfaceView.setAlpha(0.01f);
+            TextureView dummyTextureView = new TextureView(getApplicationContext());
+            dummyTextureView.setAlpha(SURFACE_ALPHA);
             ViewGroup.LayoutParams sparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 1);
-            dummySurfaceView.setLayoutParams(sparams);
-            mFlashManipulator = new DefaultFlashlightManipulator(dummySurfaceView);
-            mContainer.addView(dummySurfaceView);
-            mDummyView = dummySurfaceView;
+            dummyTextureView.setLayoutParams(sparams);
+            mFlashManipulator = new DefaultFlashlightManipulator(dummyTextureView);
+            mContainer.addView(dummyTextureView);
 		} else if(method.equals("htc")) {
 			mFlashManipulator = new HTCFlashlightManipulator();
 		} else if(method.equals("nosurfaceview")) {
 			mFlashManipulator = new NoSurfaceViewFlashlightManipulator();
 		} else if(method.equals("camera2")) {
             TextureView dummyTextureView = new TextureView(getApplicationContext());
-            dummyTextureView.setAlpha(0);
+            dummyTextureView.setAlpha(SURFACE_ALPHA);
             ViewGroup.LayoutParams sparams = new ViewGroup.LayoutParams(176, 144);
             dummyTextureView.setLayoutParams(sparams);
             mFlashManipulator = new Camera2FlashlightManipulator(getApplicationContext(), dummyTextureView);
             mContainer.addView(dummyTextureView);
-            mDummyView = dummyTextureView;
         } else {
-            SurfaceView dummySurfaceView = new SurfaceView(getApplicationContext());
-			dummySurfaceView.setAlpha(0.01f);
-			ViewGroup.LayoutParams sparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 1);
-			dummySurfaceView.setLayoutParams(sparams);
-			mFlashManipulator = new DefaultFlashlightManipulator(dummySurfaceView);
-			mContainer.addView(dummySurfaceView);
-            mDummyView = dummySurfaceView;
+            TextureView dummyTextureView = new TextureView(getApplicationContext());
+            dummyTextureView.setAlpha(SURFACE_ALPHA);
+            ViewGroup.LayoutParams sparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+            dummyTextureView.setLayoutParams(sparams);
+            mFlashManipulator = new DefaultFlashlightManipulator(dummyTextureView);
+            mContainer.addView(dummyTextureView);
 		}
 
 		mWindowManager.addView(mContainer, params);

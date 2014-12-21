@@ -18,25 +18,60 @@ package com.woodblockwithoutco.quickcontroldock.model.impl.actions.flashlight.ma
 import java.io.IOException;
 
 
+import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
 import android.os.AsyncTask;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.TextureView;
+import android.view.TextureView.SurfaceTextureListener;
 
 @SuppressWarnings("deprecation")
 public class DefaultFlashlightManipulator implements FlashlightManipulator {
 
 	
-	static Camera sCam;
-	Parameters mParams;
-	SurfaceView mSurface;
-	SurfaceHolder mHolder;
+	private Camera mCam;
+	private Parameters mParams;
+	private SurfaceTexture mSurfaceTexture;
+    private boolean mPendingRequest = false;
 
-	public DefaultFlashlightManipulator(SurfaceView surface) {
-		mSurface = surface;
-		mHolder = mSurface.getHolder();
-		mHolder.addCallback(new SurfaceCallback());
+	public DefaultFlashlightManipulator(TextureView textureView) {
+        mPendingRequest = false;
+        textureView.setSurfaceTextureListener(new SurfaceTextureListener() {
+            @Override
+            public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
+                mSurfaceTexture = surface;
+                if(mPendingRequest) {
+                    mPendingRequest = false;
+                    turnFlashlightOn();
+                }
+            }
+
+            @Override
+            public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
+                mSurfaceTexture = surface;
+                if(mPendingRequest) {
+                    mPendingRequest = false;
+                    turnFlashlightOn();
+                }
+            }
+
+            @Override
+            public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
+                mSurfaceTexture = null;
+                return false;
+            }
+
+            @Override
+            public void onSurfaceTextureUpdated(SurfaceTexture surface) {
+                mSurfaceTexture = surface;
+                if(mPendingRequest) {
+                    mPendingRequest = false;
+                    turnFlashlightOn();
+                }
+            }
+        });
 	}
 
 
@@ -48,10 +83,10 @@ public class DefaultFlashlightManipulator implements FlashlightManipulator {
 				@Override
 				protected Boolean doInBackground(Void... params) {
 					try {
-						sCam = Camera.open();   
-						mParams = sCam.getParameters();
+						mCam = Camera.open();
+						mParams = mCam.getParameters();
 						mParams.setFlashMode(Parameters.FLASH_MODE_TORCH);
-						sCam.setParameters(mParams);
+						mCam.setParameters(mParams);
 					} catch(Exception e) {
 						return false;
 					}
@@ -63,13 +98,13 @@ public class DefaultFlashlightManipulator implements FlashlightManipulator {
 				protected void onPostExecute(Boolean result) {
 					if(result) {
 						try {
-							sCam.setPreviewDisplay(mHolder);
+                            mCam.setPreviewTexture(mSurfaceTexture);
 						} catch (IOException e) {
-							sCam.stopPreview();
-							mHolder=null;
+							mCam.stopPreview();
+							mSurfaceTexture = null;
 							return;
 						}
-						sCam.startPreview();
+						mCam.startPreview();
 					}
 				}
 
@@ -82,26 +117,9 @@ public class DefaultFlashlightManipulator implements FlashlightManipulator {
 
 	public void turnFlashlightOff() {
 		try {
-			sCam.stopPreview();
-			sCam.release(); 
+			mCam.stopPreview();
+			mCam.release();
 		} catch(RuntimeException e) {}
-	}
-
-	private class SurfaceCallback implements SurfaceHolder.Callback {
-		@Override
-		public void surfaceChanged(SurfaceHolder holder, int format, int width,
-				int height) {}
-
-		@Override
-		public void surfaceCreated(SurfaceHolder holder) {
-			mHolder = holder;
-		}
-
-		@Override
-		public void surfaceDestroyed(SurfaceHolder holder) {
-			mHolder=null;
-		}
-
 	}
 
 }
