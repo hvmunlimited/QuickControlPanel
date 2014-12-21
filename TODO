@@ -1,6 +1,6 @@
 Current To-Do list:
 -Fix wrong selected notification indication
-~~-Add color for Material theme~~
+<del>-Add color for Material theme</del>
 -Change icon
 -Make data toggle active for devices with root(for Lollipop only)
 -Make airplane mode toggle active for devices with root
