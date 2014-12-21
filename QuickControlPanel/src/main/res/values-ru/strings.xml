@@ -274,5 +274,7 @@
     <string name="notifications_filter_cat">Фильтрация</string>
     <string name="notifications_ignore_apps">Игнорировать уведомления&#8230;</string>
     <string name="service_name">Сервис управления музыкой</string>
+    <string name="camera_error">Не удалось получить доступ к камере</string>
+    <string name="camera_error_code">Не удалось получить доступ к камере, код ошибки = </string>
 
 </resources>

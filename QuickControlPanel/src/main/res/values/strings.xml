@@ -272,4 +272,9 @@
     <string name="notifications_misc">Miscellaneous</string>
     <string name="service_name">Music control service</string>
 
+    <string name="camera_error">Failed to gain access to camera</string>
+    <string name="camera_error_code">Failed to gain access to camera, error code = </string>
+    <string name="panel_notifications">Notifications</string>
+    <string name="backup_backup_cat">Backup</string>
+
 </resources>
